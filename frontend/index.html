@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página inicial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="caixa">
+            <header>
+                <h1>Encurtador de URL</h1>
+                <p>Se você quer compartilhar uma notícia ou qualquer outra coisa para alguém mas se depara com o problema de ter um link grande demais ou simplesmente difícil de se lembrar, os seus problemas acabaram, basta encurtar o seu link aqui para resolver este problema!</p>
+            </header>
+
+            <section>
+
+
+                <div id="divLonga">
+                    <div>Cole o link no campo abaixo e clique no botão para encurtar. Obs: links inválidos não funcionarão</div>
+                    <div id="inputCaixa">
+                        <input type="text" id="inputLonga" class="links" placeholder="Cole sua URL longa aqui...">
+                        <button id="botaoPost">encurtar</button>
+                    </div>
+                </div>
+
+
+                <div id="divCurta">
+                    <div>link encurtado:</div>
+                    <div id="outputBox">
+                        <div id="outputCaixa">
+                            <p type="text" id="output" class="links" placeholder="...">...</p>
+                        </div>
+                        <div id="outputBotaoBox">
+                            <button id="botaoCopiar" onclick="copiar()">copiar</button>
+                        </div>
+                    </div>
+
+
+                    
+                    <!-- <button>Copiar</button> -->
+                </div>
+            </section>
+
+
+            <footer>
+                <a href="https://github.com/Devs097518/encurtador_de_url" target="_blank">
+                  <img src="github-icon.png" id="githubImg" alt="">  
+                </a>
+                
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
