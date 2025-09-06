@@ -44,7 +44,7 @@ app.post('/AdicionarLink', async (req, res) => {
     });
 
     res.json({
-        pequenoUrl: `https://encurtador.com.br/05bNn/${pequenoId}`,
+        pequenoUrl: `https://short075.vercel.app/${pequenoId}`,
         data: NovoLink
     });
 
