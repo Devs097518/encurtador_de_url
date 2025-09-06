@@ -44,7 +44,7 @@ app.post('/AdicionarLink', async (req, res) => {
     });
 
     res.json({
-        pequenoUrl: `http://bit.ly/3JSScQa${pequenoId}`,
+        pequenoUrl: `https://encurtador.com.br/05bNn/${pequenoId}`,
         data: NovoLink
     });
 
