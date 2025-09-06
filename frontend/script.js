@@ -1,7 +1,7 @@
 let output = document.getElementById('output');
 let divLonga = document.getElementById('divLonga');
 let divCurta = document.getElementById('divCurta');
-let SERVIDOR = 'http://localhost:3000' ;
+let SERVIDOR = 'https://encurtador-de-url-hekb.onrender.com' ;
 
 
 
