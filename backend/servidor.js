@@ -44,7 +44,7 @@ app.post('/AdicionarLink', async (req, res) => {
     });
 
     res.json({
-        pequenoUrl: `https://encurtador-de-url-hekb.onrender.com/${pequenoId}`,
+        pequenoUrl: `http://bit.ly/3JSScQa${pequenoId}`,
         data: NovoLink
     });
 
