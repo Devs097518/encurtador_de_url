@@ -34,7 +34,8 @@ ConectarAoDB();
 
 app.post('/AdicionarLink', async (req, res) => {
 
-    const { linkLongo } = req.body;
+    try{
+        const { linkLongo } = req.body;
     let pequenoId = nanoid(6)
 
 
@@ -47,6 +48,12 @@ app.post('/AdicionarLink', async (req, res) => {
         pequenoUrl: `https://short075.vercel.app/${pequenoId}`,
         data: NovoLink
     });
+    }
+    
+    catch(error){
+        console.log('Ocorreu um erro ao adicionar o link',error);
+    }
+    
 
 });
 
@@ -67,7 +74,7 @@ app.get('/:pequenoId', async (req, res) => {
     res.redirect(Links.linkLongo);
     console.log('aqui tá o originalUrl : ',Links.linkLongo);
 
-}); //o get é ativado, mas vem undefined quando clicamos no link encurtado
+});  
 
 
 
