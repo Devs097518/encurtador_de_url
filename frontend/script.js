@@ -1,7 +1,7 @@
 let output = document.getElementById('output');
 let divLonga = document.getElementById('divLonga');
 let divCurta = document.getElementById('divCurta');
-let SERVIDOR = 'https://short075.vercel.app/' ;
+let SERVIDOR = 'https://short075.vercel.app' ;
 
 
 

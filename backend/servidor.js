@@ -6,11 +6,17 @@ import EncurtadorSchema from './EncurtadorDeLink.js';
 import { nanoid } from 'nanoid';
 
 
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST"],
+}));
+
+
 
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
+
 app.use(express.json());
 dotenv.config();
 
@@ -49,7 +55,7 @@ app.post('/AdicionarLink', async (req, res) => {
         data: NovoLink
     });
     }
-    
+
     catch(error){
         console.log('Ocorreu um erro ao adicionar o link',error);
     }
