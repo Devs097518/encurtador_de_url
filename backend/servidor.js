@@ -1,24 +1,20 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import EncurtadorSchema from './EncurtadorDeLink.js';
 import { nanoid } from 'nanoid';
-
-
-app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST"],
-}));
-
 
 
 const app = express();
 const PORT = 3000;
 
 
+app.use(cors());
 app.use(express.json());
-dotenv.config();
+
 
 const ConectarAoDB = async () => {
     try {
@@ -40,26 +36,26 @@ ConectarAoDB();
 
 app.post('/AdicionarLink', async (req, res) => {
 
-    try{
+    try {
         const { linkLongo } = req.body;
-    let pequenoId = nanoid(6)
+        let pequenoId = nanoid(6)
 
 
-    const NovoLink = await EncurtadorSchema.create({
-        linkLongo,
-        pequenoId
-    });
+        const NovoLink = await EncurtadorSchema.create({
+            linkLongo,
+            pequenoId
+        });
 
-    res.json({
-        pequenoUrl: `https://short075.vercel.app/${pequenoId}`,
-        data: NovoLink
-    });
+        res.json({
+            pequenoUrl: `https://short075.vercel.app/${pequenoId}`, //https://short075.vercel.app/
+            data: NovoLink
+        });
     }
 
-    catch(error){
-        console.log('Ocorreu um erro ao adicionar o link',error);
+    catch (error) {
+        console.log('Ocorreu um erro ao adicionar o link', error);
     }
-    
+
 
 });
 
@@ -75,12 +71,12 @@ app.get('/:pequenoId', async (req, res) => {
     const Links = await EncurtadorSchema.findOne({ pequenoId });
     console.log('aqui tá o pequenoId : ', pequenoId);
 
-    if(!Links) return res.status(404).send('O link não existe')
+    if (!Links) return res.status(404).send('O link não existe')
 
     res.redirect(Links.linkLongo);
-    console.log('aqui tá o originalUrl : ',Links.linkLongo);
+    console.log('aqui tá o originalUrl : ', Links.linkLongo);
 
-});  
+});
 
 
 
